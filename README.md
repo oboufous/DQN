@@ -1,15 +1,11 @@
 # Deep Q Network (DQN)
 A Tensorflow implementation of a **Deep Q Network (DQN)** for playing Atari games.
-
-![](https://image.ibb.co/n6hqtA/1-M8-RWev-Lxhus56-RABFEGYYQ.jpg)
-
 Trained on [OpenAI Gym Atari environments](https://gym.openai.com/envs/#atari).
 
-Based on [Human-Level Control through Deep Reinforcement Learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf). This implementation includes the improvements to the [original DQN](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf) detailed in the above paper, namely:
-- Larger network
-- Longer training
-- Target network
-- Huber loss
+Compared to the [original method](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf), this implementation includes several improvements including:
+- A custom-made environment
+- More adequate hyper-parameters to the problem
+- Smaller network and faster training
 
 ## Requirements
 Note: Versions stated are the versions I used, however this will still likely work with other versions.
@@ -24,7 +20,7 @@ Note: Versions stated are the versions I used, however this will still likely wo
 - [inotify-tools](https://github.com/rvoicilas/inotify-tools/wiki) 3.14
 
 ## Usage
-The default environment is 'BreakoutDeterministic-v4'. To use a different environment simply pass the environment in via the `--env` argument when running the following files.
+The default environment is 'maze-random-10x10-plus-v0'.
 ```
   $ python train.py
 ```
@@ -40,15 +36,6 @@ This shell script should be run alongside the training script, allowing to perio
 ```
 Once we have a trained network, we can visualise its performance in the game environment by running `play.py`. This will play the game on screen using the trained network.
 
-## Results
-Result of training the DQN on the 'BreakoutDeterministic-v4' environment:
-
-![](/video/BreakoutDeterministic-v4.gif)
-
-## References
-- [Playing Atari with Deep Reinforcement Learning](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf)
-- [Human-Level Control through Deep Reinforcement Learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
-- [Experience replay implementation](https://github.com/tambetm/simple_dqn/blob/master/src/replay_memory.py)
 
 ## License
 MIT License
